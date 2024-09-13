@@ -1,0 +1,356 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Installing R/RStudio Guide",
+    "section": "",
+    "text": "Overview\nIn this R(eady)SetGo guide, we demonstrate how to download and install the software R/RStudio on your computer which you will use throughout your degree. If you cannot download R/RStudio to your own computer, there is also a chapter guiding you through using the software on the library/lab computers.\nSee Chapter 1 if you have a Windows computer.\nSee Chapter 2 if you have a Mac.\nSee Chapter 3 if you need to use the library/lab computers.\nEvery now and again, you need to update R/RStudio or the packages you use, so there is Chapter 4 to support you there.\nIf you want to knit R Markdown files to PDF, you will need to install an extra package, so see Chapter 5.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "instructions.html#sec-setup",
+    "href": "instructions.html#sec-setup",
+    "title": "1  How to Use this Book",
+    "section": "\n1.1 Setup",
+    "text": "1.1 Setup\n\n1.1.1 Install booktem\n# install.packages(\"devtools\")\ndevtools::install_github(\"debruine/booktem\")\n\n1.1.2 Quarto Options\nThe file _quarto.yml contains various options that you can set to change the format and look of your book.\n\n1.1.2.1 Language Options\nThere is some default text for things like the “authors” list and “table of contents” that might need translations. Set the lang key to the 2-letter language code for your language.\nYou can make a custom translation by translating the values in the include/_language.yml file.\nlang: en\n# language: include/_language.yml\n\n1.1.2.2 Project Options\nThe project key defines the inputs and outputs for the book (quarto reference).\n\n\n\n\n\n\nproject key\n\n\n\n\n\nproject:\n  type: book\n  output-dir: docs\n  resources: resources \n\n\n\nThe output-dir key defines the directory where the rendered web files will be saved. This is set to docs in order to be compatible with GitHub Pages, but you can change this if you are working with a different repository that expects the web files to be in a different directory.\nThe resources key specifies a directory that is copied verbatim to the output directory. This is where you should put, for example, data files that you want to make accessible online (sometimes they don’t automatically copy over when linked).\n\n1.1.2.3 Book Options\nThe book key defines options that affect the look and function of the book (quarto reference).\n\n\n\n\n\n\nbook key\n\n\n\n\n\nbook:\n  title: Book\n  subtitle: ~\n  author: ~\n  doi: ~\n  license: CC-BY 4.0\n  description: ~\n  cover-image: images/logos/logo.png\n  image: images/logos/logo.png\n  favicon: images/logos/logo.png\n  cookie-consent: false\n  google-analytics: ~\n  page-navigation: true\n  search: true\n  # comments:\n  #   hypothesis:\n  #     theme: clean\n  #     openSidebar: false\n  downloads: ~\n  sharing: ~\n  sidebar:\n    title: ~\n    logo: ~\n    search: true\n    contents: ~\n    style: floating\n    background: ~\n    foreground: ~\n    border: true\n    alignment: left\n    collapse-level: 3\n    pinned: true\n    header: \"\"\n    footer: \"\"\n  margin-header: ~\n  page-footer:\n    left: ~\n    right: ~\n  chapters:\n  - index.qmd\n  - instructions.qmd\n  appendices:\n  - references.qmd\n\n\n\n\n1.1.2.4 html Options\nThe format key defines options for specific formats, such as html or pdf. We’ll only be using html here (quarto reference).\n\n\n\n\n\n\nformat:html key\n\n\n\n\n\nformat:\n  html:\n    theme:\n      light:\n      - flatly\n      - include/light.scss\n      dark:\n      - darkly\n      - include/dark.scss\n    css:\n    - https://use.fontawesome.com/releases/v5.13.0/css/all.css\n    - include/booktem.css\n    - include/glossary.css\n    - include/style.css\n    df-print: kable\n    code-link: true\n    code-fold: false\n    code-line-numbers: true\n    code-overflow: wrap\n    code-copy: hover\n    highlight-style: a11y\n    mainfont: ~\n    monofont: ~\n    include-after-body: [include/script.js]\n\n\n\n\n1.1.3 Crossrefs\nSection links must start with sec- and look like this: Section 1.1.5.\n## Section Title {#sec-section-title}\n\nInternal links look like this: @sec-section-title\nFigure links must start with fig- and look like this: Figure 1.1.\n\n\n\n\nFigure 1.1: A histogram of a Poisson distribution with lambda = 3\n\n\n\nTable links must start with tbl- and look like this: Table 1.1.\n\n\n\n\n\nTable 1.1: The authors of this book\n\nfirst_name\nlast_name\n\n\n\nLisa\nDeBruine\n\n\nDaniël\nLakens\n\n\n\n\n\n\n\nSee the quarto documentation for more information.\n\n1.1.4 References\nZotero export - keep updated\n\n1.1.5 Snippets\nSnippets in RStudio provide shortcuts to syntax. For example, in an RMarkdown document, type “r” and shift-tab to expand a code chunk.\nYou can add your own snippets. Under the Tools menu, choose Edit Code Snippets... and paste the following text into the end of the appropriate sections.\n\n1.1.5.1 Markdown\nsnippet gls\n    r glossary(\"${1:term}\")\n    \nsnippet gls2\n    r glossary(\"${1:term}\", \"${2:display}\")\n    \nsnippet h1\n    # ${1:title} {#sec-${2:ref}}\n    \nsnippet h2\n    ## ${1:title} {#sec-${2:ref}}\n    \nsnippet h3\n    ### ${1:title} {#sec-${2:ref}}\n    \nsnippet h4\n    #### ${1:title} {#sec-${2:ref}}\n    \nsnippet h5\n    ##### ${1:title} {#sec-${2:ref}}\n\n1.1.6 Customize\n\n1.1.6.1 Page Footer\nThe default footer includes license YEAR, author, and github and twitter icons, but you can customize this in the _quarto.yml file under page-footer:. See the quarto documentation for more options. See the available icons at https://icons.getbootstrap.com/."
+  },
+  {
+    "objectID": "instructions.html#sec-layout",
+    "href": "instructions.html#sec-layout",
+    "title": "1  How to Use this Book",
+    "section": "\n1.2 Layout",
+    "text": "1.2 Layout\n\n1.2.1 Conventions\nThis book will use the following conventions:\n\nCode: list(number = 1, letter = \"A\")\n\nFile paths: data/sales.csv\n\nMenu/interface options: Tools &gt; Global Options… &gt; Pane Layout\n\nR Packages: tidyverse\n\nGlossary items: alphaThe threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.\n\nCitations: Wickham et al. (2022)\n\nInternal links: Section 1.2.1\n\nExternal links: Mastering Shiny\n\nMac-specific: Cmd-Shift-F10\n\nWindows-specific: Ctl-Shift-F10\n\n\nA list of mac and windows keyboard shortcuts.\n\n1.2.2 Figures\nIt is best practice to set a custom ggplot theme, then each subsequent plot will use that theme. You can put this code in R/my_setup.R after loading ggplot2.\nStart with a built-in theme and then add any tweaks with the theme() function.\n\nlibrary(ggplot2)\n\nmy_theme &lt;- theme_minimal(base_size = 16) + \n            theme(panel.background = element_rect(fill = \"red\", \n                                                  color = \"black\", \n                                                  size = 5),\n                  panel.grid = element_blank())\n\nWarning: The `size` argument of `element_rect()` is deprecated as of ggplot2 3.4.0.\nℹ Please use the `linewidth` argument instead.\n\ntheme_set(my_theme)\n\n\nggplot(midwest, aes(popdensity, percollege)) +\n  geom_point(alpha = 0.5) +\n  labs(x = \"Population Density\", y = \"Percent College Educated\")\n\n\n\nFigure 1.2: Demographic information of midwest counties from 2000 US census\n\n\n\n\n1.2.3 Tables\n\nhead(beaver1)\n\n\n\nBeavers \n\nday\ntime\ntemp\nactiv\n\n\n\n346\n840\n36.33\n0\n\n\n346\n850\n36.34\n0\n\n\n346\n900\n36.35\n0\n\n\n346\n910\n36.42\n0\n\n\n346\n920\n36.55\n0\n\n\n346\n930\n36.69\n0\n\n\n\n\n\n\n\n1.2.4 Callout boxes\nSee the quarto reference for more options.]{.aside}\n\n\n\n\n\n\nNote\n\n\n\n.callout-note: Informational asides.\n\n\n\n\n\n\n\n\nClick to expand\n\n\n\n\n\ncolapse = “true”: Expanded!\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n.callout-tip: Tips\n\n\n\n\n\n\n\n\nWarning\n\n\n\n.callout-warning: Notes to warn you about something.\n\n\n\n\n\n\n\n\nCaution\n\n\n\n.callout-caution: Notes about things that could cause serious errors.\n\n\n\n\n\n\n\n\nImportant\n\n\n\n.callout-important: Notes about things that are important.\n\n\n\n1.2.5 Code and Output\n\n# code chunks\npaste(\"Code\", \"Output\", 1, sep = \" \")\n\n[1] \"Code Output 1\"\n\n\n\n\n\nFilename or header\n\n# code chunks with filename\na &lt;- 1\n\n\n\n\n```{r, fig.width = 2, fig.height = 2}\n# code chunks with visible headers\nhist(rnorm(100000))\n```\n\n\n## Markdown Example\n\n* Inline code: `r nrow(iris)`\n* *Italics*\n* **Bold**\n* [Linked text](https://psyteachr.github.io)\n\n1.2.6 Fonts"
+  },
+  {
+    "objectID": "instructions.html#sec-extras",
+    "href": "instructions.html#sec-extras",
+    "title": "1  How to Use this Book",
+    "section": "\n1.3 Extras",
+    "text": "1.3 Extras\n\n1.3.1 Glossary\nBooks are set up with lightweight glossary functions from the glossary package.\n\n# code in R/my_setup.R to initialise the glossary on each page\nlibrary(glossary)\nglossary_path(\"include/glossary.yml\")\nglossary_popup(\"click\") # \"click\", \"hover\" or \"none\"\n\nEdit the file glossary.yml with your glossary terms like this:\nalpha: |\n  The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.\np-value: |\n  The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.\nLook up a term from the glossary file with glossary(\"alpha\"): alphaThe threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.\nDisplay a different value for the term with glossary(\"alpha\", \"$\\\\alpha$\"): \\(\\alpha\\)The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.\nUse an inline definition instead of the glossary file with glossary(\"beta\", def = \"The second letter of the Greek alphabet\"): betaThe second letter of the Greek alphabet\nJust show the definition with glossary(\"p-value\", show = \"def\"): The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.\nShow the table of terms defined on this page with glossary_table():\n\n\n\n\nterm\ndefinition\n\n\n\nalpha\nThe threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.\n\n\nbeta\nThe second letter of the Greek alphabet\n\n\np-value\nThe probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.\n\n\n\n\n\n\n1.3.2 FontAwesome\nThe fontAwesome quarto extension allows you to use the free icons with syntax like:\n{{&lt; fa dragon &gt;}}\n{{&lt; fa brands github size = 5x title=\"(github logo)\" &gt;}}\nTo install it, just run this code in the Terminal pane of RStudio (not the Console pane).\nquarto install extension quarto-ext/fontawesome\n\n\n\n\nWickham, H., Bryan, J., & Barrett, M. (2022). Usethis: Automate package and project setup. https://CRAN.R-project.org/package=usethis"
+  },
+  {
+    "objectID": "webexercises.html#example-questions",
+    "href": "webexercises.html#example-questions",
+    "title": "Appendix A — Webexercises",
+    "section": "\nA.1 Example Questions",
+    "text": "A.1 Example Questions\n\nA.1.1 Fill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 4 is: \n\n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\nA.1.2 Multiple Choice (mcq())\n\n“Never gonna give you up, never gonna: \nlet you go\nturn you down\nrun away\nlet you down”\n“I \nbless the rains\nguess it rains\nsense the rain down in Africa” -Toto\n\nA.1.3 True or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). \nTRUE\nFALSE\n\n\nA.1.4 Longer MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\nthe probability that the null hypothesis is truethe probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is truethe probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\nthere is a 95% probability that the true mean lies within this rangeif you repeated the process many times, 95% of intervals calculated in this way contain the true mean95% of the data fall within this range"
+  },
+  {
+    "objectID": "webexercises.html#checked-sections",
+    "href": "webexercises.html#checked-sections",
+    "title": "Appendix A — Webexercises",
+    "section": "\nA.2 Checked sections",
+    "text": "A.2 Checked sections\nCreate sections with the class webex-check to add a button that hides feedback until it is pressed. Add the class webex-box to draw a box around the section (or use your own styles).\n\nI am going to learn a lot: \nTRUE\nFALSE\n\nWhat is a p-value?\n\nthe probability that the null hypothesis is truethe probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is truethe probability of making an error in your conclusion"
+  },
+  {
+    "objectID": "webexercises.html#hidden-solutions-and-hints",
+    "href": "webexercises.html#hidden-solutions-and-hints",
+    "title": "Appendix A — Webexercises",
+    "section": "\nA.3 Hidden solutions and hints",
+    "text": "A.3 Hidden solutions and hints\nYou can fence off a solution area that will be hidden behind a button using hide() before the solution and unhide() after, each as inline R code. Pass the text you want to appear on the button to the hide() function.\nIf the solution is a code chunk, instead of using hide() and unhide(), simply set the webex.hide chunk option to TRUE, or set it to the string you wish to display on the button.\nRecreate the scatterplot below, using the built-in cars dataset.\n\n\n\n\n\n\n\n\n\n\nI need a hint\n\nSee the documentation for plot() (?plot)\n\n\n\n\n\nClick here to see the solution\n\nplot(cars$speed, cars$dist)"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Wickham, H., Bryan, J., & Barrett, M. (2022). Usethis: Automate\npackage and project setup. https://CRAN.R-project.org/package=usethis"
+  },
+  {
+    "objectID": "updating-r.html#updating-rstudio",
+    "href": "updating-r.html#updating-rstudio",
+    "title": "4  Updating R, RStudio, and packages",
+    "section": "\n4.1 Updating RStudio",
+    "text": "4.1 Updating RStudio\nRStudio is the easiest component to update. Typically, updates to RStudio won’t affect your code, instead they add in new features, like spell-check or upgrades to what RStudio can do. There’s usually very little downside to updating RStudio and it’s easy to do.\nClick Help &gt; Check for updates\n\n\n\n\nUpdating RStudio\n\n\n\nIf an update is available, it will prompt you to download it and you can install it as usual."
+  },
+  {
+    "objectID": "updating-r.html#updating-r",
+    "href": "updating-r.html#updating-r",
+    "title": "4  Updating R, RStudio, and packages",
+    "section": "\n4.2 Updating R",
+    "text": "4.2 Updating R\nFinally, you may also wish to update R itself. The key thing to be aware of is that when you update R, if you just download the latest version from the website, you will lose all your packages.\n\n4.2.1 Windows\nThe easiest way to update R on Windows and not cause yourself a huge headache is to use the installr package. When you use the updateR() function, a series of dialogue boxes will appear. These should be fairly self-explanatory but there is a full step-by-step guide available for how to use installr, the important bit is to select “Yes” when it asked if you would like to copy your packages from the older version of R.\n\n# Install the installr package\ninstall.packages(\"installr\")\n\n# Run the update function\ninstallR::updateR()\n\n\n4.2.2 Mac\nFor a Mac, you can use the updateR package. You’ll need to install this from GitHub. You will be asked to type your system password (that you use to log into your computer) in the console pane. If relevant, it will ask you if you want to restore your packages for a new major version.\n\n# install from github\ndevtools::install_github(\"AndreaCirilloAC/updateR\")\n\n# update your R version, you will need your system password\nupdateR::updateR()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Updating R, RStudio, and packages</span>"
+    ]
+  },
+  {
+    "objectID": "updating-r.html#updating-packages",
+    "href": "updating-r.html#updating-packages",
+    "title": "4  Updating R, RStudio, and packages",
+    "section": "\n4.3 Updating packages",
+    "text": "4.3 Updating packages\nPackage developers will occasionally release updates to their packages. This is typically to add in new functions to the package, or to fix or amend existing functions. Be aware that some package updates may cause your previous code to stop working. This does not tend to happen with minor updates to packages, but occasionally with major updates, you can have serious issues if the developer has made fundamental changes to how the code works. For this reason, we recommend updating all your packages once at the beginning of each academic year (or semester) - don’t do it before an assessment or deadline just in case!\nTo update an individual package, the easiest way is to use the install.packages() function, as this always installs the most recent version of the package.\n\ninstall.packages(\"tidyverse\")\n\nTo update multiple packages, or indeed all packages, RStudio provides helpful tools. Click Tools &gt; Check for Package Updates. A dialogue box will appear and you can select the packages you wish to update. Be aware that if you select all packages, this may take some time and you will be unable to use R whilst the process completes.\n\n\n\n\n\n\n\nUpdating packages with RStudio",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Updating R, RStudio, and packages</span>"
+    ]
+  },
+  {
+    "objectID": "updating-r.html#sec-package-install-troubleshooting",
+    "href": "updating-r.html#sec-package-install-troubleshooting",
+    "title": "4  Updating R, RStudio, and packages",
+    "section": "\n4.4 Troubleshooting",
+    "text": "4.4 Troubleshooting\nOccasionally, you might have a few problem packages that seemingly refuse to update. For me, rlang and vctrs cause me no end of trouble. These aren’t packages that you will likely every explicitly load, but they’re required beneath the surface for R to do things like knit your Markdown files etc.\n\n4.4.1 Non-zero exit status\nIf you try to update a package and get an error message that says something like Warning in install.packages : installation of package ‘vctrs’ had non-zero exit status or perhaps Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) :  namespace 'rlang' 0.4.9 is being loaded, but &gt;= 0.4.10 is required one solution I have found is to manually uninstall the package, restart R, and then install the package new, rather than trying to update an existing version. The installr package also has a useful function for uninstalling packages.\n\n# Load installr\nlibrary(installr)\n\n# Uninstall the problem package\nuninstall.packages(\"package_name\")\n\n# Then restart R using session - restart R\n# Then install the package fresh\n\ninstall.packages(\"package\")\n\n\n4.4.2 Cannot open file\nYou may get the following error after trying to install any packages at all:\n\nError in install packages : Cannot open file ‘C:/…..’: Permission denied\n\nThis usually indicates a permissions problem with writing to the default library (the folder that packages are kept in). Sometimes this means that you need to install R and RStudio as administrator or run it as administrator.\nOne other fix may be to change the library location using the following code (check in “C:/Program Files/R” for what version you should have instead of “R-3.5.2”):\n\n# change the library path\n.libPaths(c(\"C:/Program Files/R/R-3.5.2/library\"))\n\nIf that works and you can install packages, set this library path permanently:\n\nInstall the usethis package\nRun usethis::edit_r_profile() in the console; it will open up a blank file\nPaste into the file (your version of): .libPaths(c(\"C:/Program Files/R/R-3.5.2/library\"))\n\nSave and close the file\nRestart R for changes to take effect\n\nThe code in your .Rprofile will now run every time you start up R.\nAs always, if you’re having issues, please ask on Teams or come to office hours.\n\n\n\nUpdating RStudio\nUpdating packages with RStudio",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Updating R, RStudio, and packages</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-windows.html#installing-base-r",
+    "href": "installing-r-windows.html#installing-base-r",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.1 Installing Base R",
+    "text": "1.1 Installing Base R\nInstall base R. Choose the download link for your operating system (Linux, Mac OS X, or Windows).\nIf you have a Mac, install the latest release from the newest R-x.x.x.pkg link (or a legacy version if you have an older operating system). You may also need to install XQuartz to be able to use some visualisation packages.\nIf you are installing the Windows version, choose the “base” subdirectory and click on the download link at the top of the page.\nIf you are using Linux, choose your specific operating system and follow the installation instructions.\n\n\n\n\n\n\nInstallation Location\n\n\n\nIt can often cause problems to install R on a network or cloud drive, such as OneDrive or DropBox. It’s better to install these programs on your computer’s drive. Depending on your computer’s settings, you may have to get IT support to give you access to installing programs.\nIt can also cause rare, but hard-to-debug problems if any of the folders in the path where you install R have non-Latin characters, including Chinese characters or Latin characters with accents (e.g., C:\\\\Daniël\\Programs\\)."
+  },
+  {
+    "objectID": "installing-r-windows.html#installing-rstudio",
+    "href": "installing-r-windows.html#installing-rstudio",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.2 Installing RStudio",
+    "text": "1.2 Installing RStudio\nGo to rstudio.com and download the RStudio Desktop (Open Source License) version for your operating system under the list titled Installers for Supported Platforms."
+  },
+  {
+    "objectID": "installing-r-windows.html#installing-rtools",
+    "href": "installing-r-windows.html#installing-rtools",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.4 Installing RTools",
+    "text": "1.4 Installing RTools\nIf you are using Windows, after you install R, you should also install RTools; use the “recommended” version highlighted near the top of the list. RTools is used for installing and loading some packages. You can get started without installing RTools, but if you are having problems with installing and loading some packages, this should be the first thing you try."
+  },
+  {
+    "objectID": "installing-r-windows.html#sec-rstudio-settings",
+    "href": "installing-r-windows.html#sec-rstudio-settings",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.4 RStudio Settings",
+    "text": "1.4 RStudio Settings\nThere are a few settings you should fix immediately after updating RStudio. Go to Tools &gt; Global Options… (⌘,), and in the General tab, uncheck the box that says Restore .RData into workspace at startup. If you keep things around in your workspace, things will get messy, and unexpected things will happen. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to Never. The only thing you want to save are your scripts.\nYou may also want to change the appearance of your code. Different fonts and themes can sometimes help with visual difficulties or dyslexia.\n\n\n\n\nRStudio General and Appearance settings\n\n\n\nYou may also want to change the settings in the Code tab. For example, Lisa prefers two spaces instead of tabs for my code and likes to be able to see the whitespace characters. But these are all a matter of personal preference.\n\n\n\n\nRStudio Code settings"
+  },
+  {
+    "objectID": "installing-r-windows.html#installing-latex",
+    "href": "installing-r-windows.html#installing-latex",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.5 Installing LaTeX",
+    "text": "1.5 Installing LaTeX\nYou can install the LaTeX typesetting system to produce PDF reports from RStudio. Without this additional installation, you will be able to produce reports in HTML but not PDF. To generate PDF reports, you will additionally need to install tinytex(R-tinytex?) and run the following code:\n\n# run this in the console\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()"
+  },
+  {
+    "objectID": "installing-r-mac.html#installing-base-r",
+    "href": "installing-r-mac.html#installing-base-r",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "",
+    "text": "Installation Location\n\n\n\nIt can often cause problems to install R on a network or cloud drive, such as OneDrive or DropBox. It’s better to install these programs on your computer’s drive. Depending on your computer’s settings, you may have to get IT support to give you access to installing programs.\nIt can also cause rare, but hard-to-debug problems if any of the folders in the path where you install R have non-Latin characters, including Chinese characters or Latin characters with accents (e.g., C:\\\\Daniël\\Programs\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R/RStudio for Mac</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-mac.html#installing-rstudio",
+    "href": "installing-r-mac.html#installing-rstudio",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.3 Installing RStudio",
+    "text": "2.3 Installing RStudio\nGo to rstudio.com and download the RStudio Desktop (Open Source License) version for your operating system under the list titled Installers for Supported Platforms."
+  },
+  {
+    "objectID": "installing-r-mac.html#installing-rtools",
+    "href": "installing-r-mac.html#installing-rtools",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.4 Installing RTools",
+    "text": "2.4 Installing RTools\nIf you are using Windows, after you install R, you should also install RTools; use the “recommended” version highlighted near the top of the list. RTools is used for installing and loading some packages. You can get started without installing RTools, but if you’re having problems with installing and loading some packages, this should be the first thing you try.\nRTools will require you to put it “on the PATH”. The instructions for this can seem a bit vague - the easiest way to do it is to open RStudio, run the below code in the console:\n\nwrite('PATH=\"${RTOOLS40_HOME}\\\\usr\\\\bin;${PATH}\"', file = \"~/.Renviron\", append = TRUE)\n\nOnce you’ve done that, restart R by clicking Session - Restart R and then run the below code in the console which should give you the path to your RTools installation:\n\nSys.which(\"make\")\n\n           make \n\"/usr/bin/make\""
+  },
+  {
+    "objectID": "installing-r-mac.html#sec-rstudio-settings",
+    "href": "installing-r-mac.html#sec-rstudio-settings",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.5 RStudio Settings",
+    "text": "2.5 RStudio Settings\nThere are a few settings you should fix immediately after updating RStudio. Go to Tools &gt; Global Options… (⌘,), and in the General tab, uncheck the box that says Restore .RData into workspace at startup. If you keep things around in your workspace, things will get messy, and unexpected things will happen. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to Never. The only thing you want to save are your scripts.\nYou may also want to change the appearance of your code. Different fonts and themes can sometimes help with visual difficulties or dyslexia.\n\n\n\n\nRStudio General and Appearance settings\n\n\n\nYou may also want to change the settings in the Code tab. For example, Lisa prefers two spaces instead of tabs for my code and likes to be able to see the whitespace characters. But these are all a matter of personal preference.\n\n\n\n\nRStudio Code settings"
+  },
+  {
+    "objectID": "installing-r-mac.html#installing-latex",
+    "href": "installing-r-mac.html#installing-latex",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.6 Installing LaTeX",
+    "text": "2.6 Installing LaTeX\nYou can install the LaTeX typesetting system to produce PDF reports from RStudio. Without this additional installation, you will be able to produce reports in HTML but not PDF. To generate PDF reports, you will additionally need to install tinytex(R-tinytex?) and run the following code:\n\n# run this in the console\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()"
+  },
+  {
+    "objectID": "installing-r-library.html",
+    "href": "installing-r-library.html",
+    "title": "3  Using R/RStudio on a University Computer",
+    "section": "",
+    "text": "3.1 Opening RStudio on a university computer\nIf you cannot install R/RStudio on your own computer, you can always use one of the computers in the psychology labs or library. They all have R/RStudio installed, as well as all the packages you need for the course materials.\nFirst, log into the computer using your GUID and password. You should now be on the main desktop page (Figure 3.1).\nFigure 3.1: Your desktop on a university computer.\nIn the Windows menu, scroll down until you see a folder for RStudio. If you open the folder, you will see the RStudio software as a blue circle icon with an R in the middle (Figure 3.2).\nFigure 3.2: The RStudio software icon within the RStudio menu folder.\nWhen RStudio opens, you should see the three main windows with the default white theme (Figure 3.3). You now have RStudio open and ready to use in line with your course materials.\nFigure 3.3: Default RStudio application with a white background theme.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R/RStudio on a University Computer</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-windows.html",
+    "href": "installing-r-windows.html",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "",
+    "text": "1.1 RStudio desktop download page\nGo to the RStudio desktop download page here which you can see in Figure 1.1. This is hosted by Posit - the company who create and maintain RStudio as an Integrated Development Environment (IDE).\nFigure 1.1: Install R and Install RStudio page on posit.co.\nThey point you to two places to 1) install R and 2) install RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installing R/RStudio for Windows</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-mac.html",
+    "href": "installing-r-mac.html",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "",
+    "text": "2.1 RStudio desktop download page\nGo to the RStudio desktop download page here which you can see in Figure 2.1. This is hosted by Posit - the company who create and maintain RStudio as an Integrated Development Environment (IDE).\nFigure 2.1: Install R and Install RStudio page on posit.co.\nThey point you to two places to 1) install R and 2) install RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R/RStudio for Mac</span>"
+    ]
+  },
+  {
+    "objectID": "updating-r.html",
+    "href": "updating-r.html",
+    "title": "4  Updating R, RStudio, and packages",
+    "section": "",
+    "text": "4.1 Updating RStudio\nRStudio is the easiest component to update. Typically, updates to RStudio won’t affect your code, instead they add in new features, like spell-check or upgrades to what RStudio can do. There’s usually very little downside to updating RStudio and it’s easy to do.\nClick Help &gt; Check for updates\nUpdating RStudio\nIf an update is available, it will prompt you to download it and you can install it as usual.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Updating R, RStudio, and packages</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-library.html#opening-rstudio-on-a-university-computer",
+    "href": "installing-r-library.html#opening-rstudio-on-a-university-computer",
+    "title": "3  Using R/RStudio on a University Computer",
+    "section": "",
+    "text": "Warning\n\n\n\nRemember when you download and save files on a university computer, they are local to that computer. Make sure you save your work to the Cloud using OneDrive to access your files across devices.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R/RStudio on a University Computer</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-library.html#packages-on-a-university-computer",
+    "href": "installing-r-library.html#packages-on-a-university-computer",
+    "title": "3  Using R/RStudio on a University Computer",
+    "section": "\n3.2 Packages on a university computer",
+    "text": "3.2 Packages on a university computer\nYou will see several warnings in your course materials about not installing R packages on the university computers. This is because they already have a large number of packages already installed. In the packages window (Figure 3.4), these are all the packages installed on the system library, meaning everyone can access them. If you install a package, it will be installed on your user library. There might be a clash between two versions of the same package and it might not work.\nSo, please do not install R packages on a university computer.\n\n\n\n\n\n\n\nFigure 3.4: Hightlighted packages window to show the packages in your system library.\n\n\n\n\nPlease speak to your course lead if you think there is a problem accessing a package on a university computer that you have been instructed to use.\n\n\n\nFigure 3.1: Your desktop on a university computer.\nFigure 3.2: The RStudio software icon within the RStudio menu folder.\nFigure 3.3: Default RStudio application with a white background theme.\nFigure 3.4: Hightlighted packages window to show the packages in your system library.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using R/RStudio on a University Computer</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-mac.html#step-1---rstudio-desktop-download-page",
+    "href": "installing-r-mac.html#step-1---rstudio-desktop-download-page",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.1 Step 1 - RStudio desktop download page",
+    "text": "2.1 Step 1 - RStudio desktop download page\nGo to the RStudio desktop download page here which you can see in Figure 2.1. This is hosted by Posit - the company who create and maintain RStudio as an Integrated Development Environment (IDE).\n\n\n\n\nFigure 2.1: ?(caption)\n\n\n\nThey point you to two places to 1) install R and 2) install RStudio."
+  },
+  {
+    "objectID": "installing-r-mac.html#step-2---install-base-r",
+    "href": "installing-r-mac.html#step-2---install-base-r",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.2 Step 2 - Install Base R",
+    "text": "2.2 Step 2 - Install Base R\nInstall base R. Choose the download link for your operating system (Linux, Mac OS X, or Windows).\nIf you have a Mac, install the latest release from the newest R-x.x.x.pkg link (or a legacy version if you have an older operating system). You may also need to install XQuartz to be able to use some visualisation packages.\nIf you are installing the Windows version, choose the “base” subdirectory and click on the download link at the top of the page.\nIf you are using Linux, choose your specific operating system and follow the installation instructions.\n\n\n\n\n\n\nInstallation Location\n\n\n\nIt can often cause problems to install R on a network or cloud drive, such as OneDrive or DropBox. It’s better to install these programs on your computer’s drive. Depending on your computer’s settings, you may have to get IT support to give you access to installing programs.\nIt can also cause rare, but hard-to-debug problems if any of the folders in the path where you install R have non-Latin characters, including Chinese characters or Latin characters with accents (e.g., C:\\\\Daniël\\Programs\\)."
+  },
+  {
+    "objectID": "installing-r-mac.html#rstudio-desktop-download-page",
+    "href": "installing-r-mac.html#rstudio-desktop-download-page",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.1 RStudio desktop download page",
+    "text": "2.1 RStudio desktop download page\nGo to the RStudio desktop download page here which you can see in Figure 2.1. This is hosted by Posit - the company who create and maintain RStudio as an Integrated Development Environment (IDE).\n\n\n\n\nFigure 2.1: Install R and Install RStudio page on posit.co.\n\n\n\nThey point you to two places to 1) install R and 2) install RStudio."
+  },
+  {
+    "objectID": "installing-r-mac.html#step-1---install-base-r",
+    "href": "installing-r-mac.html#step-1---install-base-r",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.2 Step 1 - Install base R",
+    "text": "2.2 Step 1 - Install base R\nThe first step is installing base R. This is the software which contains all the functions and code you will use, but it is not very user friendly on it’s own. We must first install R before we install RStudio.\nIf you click Download and Install R, it will take you to the download page for R (Figure 2.2).\n\n\n\n\n\n\n\nFigure 2.2: Home page for the R CRAN site.\n\n\n\n\nYou should click Download R for macOS and it will take you the download page (Figure 2.3). Highlighted in the black square, the top of the page will show the latest versions. If you have a new Mac with a silicon chip (if you are unsure click the Apple logo in the top left &gt; About this Mac &gt; Chip), click the top link to download the installation file. If you have an older Mac but latest operating system (OS), click the second link to download the installation file.\nIf you have an older Mac which does not support the latest version of R, you can scroll down the page to see different versions supporting older OSs, but please check with your course lead if you can only download an older version of R to check it is still suitable.\n\n\n\n\n\n\n\nFigure 2.3: R for MACOS download page on CRAN.\n\n\n\n\nOnce you have downloaded the file, clicking on it should open the installation process. Click Continue on the first page (Figure 2.4).\n\n\n\n\n\n\n\nFigure 2.4: The first R installation window for Mac OS: Introduction.\n\n\n\n\nThe next page (Figure 2.5) - Read Me - explains what R is installing on your computer. Click Continue.\n\n\n\n\n\n\n\nFigure 2.5: The second R installation window for Mac OS: Read Me.\n\n\n\n\nThe License (Figure 2.6) page explains the license R is covered under. Click Continue.\n\n\n\n\n\n\n\nFigure 2.6: The third R installation window for Mac OS: License.\n\n\n\n\nAfter clicking Continue on the License page, it will ask you to agree to the licence (Figure 2.7). Click Agree.\n\n\n\n\n\n\n\nFigure 2.7: Agreeing to the R user license.\n\n\n\n\n\n\n\n\n\n\nInstallation location and path\n\n\n\nOn a Mac, it should automatically choose a location to install R and skip Destination Select, but if you do get the option it can often cause problems to install R on a network or cloud drive, such as OneDrive or DropBox. It is better to install these programs on your computer’s drive. Depending on your computer’s settings, you may have to get IT support to give you access to installing programs if you are using a work computer with restrictions.\n\n\nThe Installation Type (Figure 2.8) page explains how much memory the R install takes up on your computer. Click Install.\n\n\n\n\n\n\n\nFigure 2.8: The fourth R installation window for Mac OS: Installation Type.\n\n\n\n\nDepending on your computer, it will take a few seconds to a few minutes, and show as installation successful (Figure 2.9). Click Close.\n\n\n\n\n\n\n\nFigure 2.9: The fifth R installation window for Mac OS: Summary.\n\n\n\n\nAfter you click Close, it should offer to send the installation file to the bin now it has finished installing (Figure 2.10). Click Move to Bin.\n\n\n\n\n\n\n\nFigure 2.10: Moving the R installation file to the bin.\n\n\n\n\nIf you followed all of these steps, then you should have R successfully installed on your computer. You do not need to open it as we never actually use R on it’s own, but you need it installed before we download and install RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R/RStudio for Mac</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-mac.html#step-2---install-rstudio",
+    "href": "installing-r-mac.html#step-2---install-rstudio",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.3 Step 2 - Install RStudio",
+    "text": "2.3 Step 2 - Install RStudio\nIf you closed the page down, go back to the RStudio desktop download page here which you can see in Figure 2.1.\nThis page should recognise what your OS is and the blue button will be customised to your OS. So, for a Mac user, it should prompt you to download RStudio for a MAC OS. Clicking this link will start downloading the file to your downloads folder.\nIf you have an older Mac and you cannot download the latest version of RStudio, click on the download a previous version link. You will see a list of previous versions under the RStudio IDE / Workbench heading.\nOnce the download has finished (depending on your computer and WiFi a few minutes to around 15 minutes), it will open in a folder (Figure 2.11). If you drag the white and blue RStudio logo into your Applications, you will be able to access it from your Applications folder.\n\n\n\n\n\n\n\nFigure 2.11: Dragging the RStudio installation file to the applications.\n\n\n\n\nWhen you open it for the first time, we recommend pinning it to your Dock ( control key and click &gt; Options &gt; Keep in Dock) so you always know where to find it.\nIf you have successfully installed R and RStudio, you should see a fresh RStudio window (Figure 2.12) when you open it from Applications or your Dock.\n\n\n\n\n\n\n\nFigure 2.12: Default white theme RStudio window.\n\n\n\n\nYou are now ready to start working with R/RStudio from your course materials!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R/RStudio for Mac</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-mac.html#getting-help-for-installation-problems",
+    "href": "installing-r-mac.html#getting-help-for-installation-problems",
+    "title": "2  Installing R/RStudio for Mac",
+    "section": "\n2.4 Getting help for installation problems",
+    "text": "2.4 Getting help for installation problems\nIf you have any problems with installing R and R Studio on your computer, please attend the graduate teaching assistant support sessions for your course, speak to your course lead, or post on the Teams channel for your course/programme.\n\n\n\nFigure 2.1: Install R and Install RStudio page on posit.co.\nFigure 2.2: Home page for the R CRAN site.\nFigure 2.3: R for MACOS download page on CRAN.\nFigure 2.4: The first R installation window for Mac OS: Introduction.\nFigure 2.5: The second R installation window for Mac OS: Read Me.\nFigure 2.6: The third R installation window for Mac OS: License.\nFigure 2.7: Agreeing to the R user license.\nFigure 2.8: The fourth R installation window for Mac OS: Installation Type.\nFigure 2.9: The fifth R installation window for Mac OS: Summary.\nFigure 2.10: Moving the R installation file to the bin.\nFigure 2.11: Dragging the RStudio installation file to the applications.\nFigure 2.12: Default white theme RStudio window.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing R/RStudio for Mac</span>"
+    ]
+  },
+  {
+    "objectID": "install-tidytex.html",
+    "href": "install-tidytex.html",
+    "title": "5  Installing TinyTeX to knit PDF files",
+    "section": "",
+    "text": "5.1 Knitting to PDF\nFor most of our courses, we encourage you to knit R Markdown files to html or Word files. However, there is also an option to knit to PDF files. By default, it will not work on your computer unless you have software on your computer to compile a PDF file.\nTo generate PDF reports, the easiest way is installing tinytex and running the following code to install a lightweight LaTeX compiler:\n# run this in the console\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Installing TinyTeX to knit PDF files</span>"
+    ]
+  },
+  {
+    "objectID": "install-tidytex.html#knitting-to-pdf",
+    "href": "install-tidytex.html#knitting-to-pdf",
+    "title": "5  Installing TinyTeX to knit PDF files",
+    "section": "",
+    "text": "Warning\n\n\n\nOn university computers, this is already installed and you should be able to knit to PDF. Please remember not to install packages on the university computers or online server as it can cause clashes between your user and system libraries.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Installing TinyTeX to knit PDF files</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-windows.html#step-1---install-base-r",
+    "href": "installing-r-windows.html#step-1---install-base-r",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.2 Step 1 - Install base R",
+    "text": "1.2 Step 1 - Install base R\nThe first step is installing base R. This is the software which contains all the functions and code you will use, but it is not very user friendly on it’s own. We must first install R before we install RStudio.\nIf you click Download and Install R, it will take you to the download page for R (Figure 2.2).\n\n\n\n\n\n\n\nFigure 1.2: Home page for the R CRAN site.\n\n\n\n\nYou should click Download R for Windows and it will take you the R for Windows page (Figure 1.3). Click Base for installing R the first time.\n\n\n\n\n\n\n\nFigure 1.3: R for Windows on the CRAN site.\n\n\n\n\nThis will take you to the Windows download page (Figure 1.4). Click Download R for Windows at the top of the page. This will be the latest version available to you and it will start downloading to your downloads folder. Double click on the file when it has finished downloading.\nIf you have an older computer which does not support the latest version of R, you can select a different version supporting older operating systems from the Previous releases link, but please check with your course lead if you can only download an older version of R to check it is still suitable.\n\n\n\n\n\n\n\nFigure 1.4: R download page on CRAN.\n\n\n\n\nOnce you have double clicked the installation file, the first window (Figure 1.5) will get you to confirm the setup language. Click OK.\n\n\n\n\n\n\n\nFigure 1.5: R installation process: Select setup language.\n\n\n\n\nThe information window (Figure 1.6) will explain what it is installing the user license. Click Next.\n\n\n\n\n\n\n\nFigure 1.6: R installation process: Information.\n\n\n\n\nThe destination location window (Figure 1.7) will ask you to confirm where it should install R to. It is important this installs to your C: drive which should be the default. Click Next.\n\n\n\n\n\n\n\nFigure 1.7: R installation process: Select destination location.\n\n\n\n\n\n\n\n\n\n\nInstallation Location\n\n\n\nIt can often cause problems to install R on a network or cloud drive, such as OneDrive or DropBox. It’s better to install these programs on your computer’s drive (C:). Depending on your computer’s settings, you may have to get IT support to give you access to installing programs.\nIt can also cause rare, but hard-to-debug problems if any of the folders in the path where you install R have non-Latin characters, including Chinese characters or Latin characters with accents (e.g., C:\\\\Daniël\\Programs\\). Try and avoid these wherever possible.\n\n\nThe select components window (Figure 1.8) lets you select which components it should install, but leave these all ticked. Click Next.\n\n\n\n\n\n\n\nFigure 1.8: R installation process: Select components.\n\n\n\n\nThe startup options window (Figure 1.9) asks if you want to customise the startup options, but leave this as No for the default options. Click Next.\n\n\n\n\n\n\n\nFigure 1.9: R installation process: Startup options.\n\n\n\n\nThe select additional tasks window (Figure 1.10) asks if you want to add any additional steps in the installation process, but leave these ticked/unticked as default. Click Next to start the installation process.\n\n\n\n\n\n\n\nFigure 1.10: R installation process: Select additional tasks.\n\n\n\n\nDepending on your computer, it will take a few seconds to a few minutes to successfull install R (Figure 1.11). Click Finish to complete this part of the process.\n\n\n\n\n\n\n\nFigure 1.11: Complete R installation process.\n\n\n\n\nIf you followed all of these steps, then you should have R successfully installed on your computer. You do not need to open it as we never actually use R on it’s own, but you need it installed before we download and install RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installing R/RStudio for Windows</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-windows.html#step-2---installrstudio",
+    "href": "installing-r-windows.html#step-2---installrstudio",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.3 Step 2 - InstallRStudio",
+    "text": "1.3 Step 2 - InstallRStudio\nGo to rstudio.com and download the RStudio Desktop (Open Source License) version for your operating system under the list titled Installers for Supported Platforms."
+  },
+  {
+    "objectID": "installing-r-windows.html#getting-help-for-installation-problems",
+    "href": "installing-r-windows.html#getting-help-for-installation-problems",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.5 Getting help for installation problems",
+    "text": "1.5 Getting help for installation problems\nIf you have any problems with installing R and R Studio on your computer, please attend the graduate teaching assistant support sessions for your course, speak to your course lead, or post on the Teams channel for your course/programme.\n\n\n\nFigure 1.1: Install R and Install RStudio page on posit.co.\nFigure 1.2: Home page for the R CRAN site.\nFigure 1.3: R for Windows on the CRAN site.\nFigure 1.4: R download page on CRAN.\nFigure 1.5: R installation process: Select setup language.\nFigure 1.6: R installation process: Information.\nFigure 1.7: R installation process: Select destination location.\nFigure 1.8: R installation process: Select components.\nFigure 1.9: R installation process: Startup options.\nFigure 1.10: R installation process: Select additional tasks.\nFigure 1.11: Complete R installation process.\nFigure 1.12: RTools page on the R CRAN site.\nFigure 1.13: RTools44 page on the R CRAN site.\nFigure 1.14: Rtools installation process: Select destination location.\nFigure 1.15: Rtools installation process: Select additional tasks.\nFigure 1.16: Rtools installation process: Ready to install.\nFigure 1.17: Complete Rtools installation process.\nFigure 1.18: RStudio installation process: Welcome.\nFigure 1.19: RStudio installation process: Choose install location.\nFigure 1.20: RStudio installation process: Choose start menu folder.\nFigure 1.21: Complete RStudio installation process.\nFigure 1.22: Default white theme RStudio window.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installing R/RStudio for Windows</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-windows.html#rstudio-desktop-download-page",
+    "href": "installing-r-windows.html#rstudio-desktop-download-page",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.1 RStudio desktop download page",
+    "text": "1.1 RStudio desktop download page\nGo to the RStudio desktop download page here which you can see in Figure 1.1. This is hosted by Posit - the company who create and maintain RStudio as an Integrated Development Environment (IDE).\n\n\n\n\nFigure 1.1: Install R and Install RStudio page on posit.co.\n\n\n\nThey point you to two places to 1) install R and 2) install RStudio."
+  },
+  {
+    "objectID": "installing-r-windows.html#step-2---installing-rtools",
+    "href": "installing-r-windows.html#step-2---installing-rtools",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.3 Step 2 - Installing RTools",
+    "text": "1.3 Step 2 - Installing RTools\nThis is technically an optional step, but after you install R it is a good idea to install RTools. You can get started without installing RTools, but if you are having problems with installing and loading some packages, this should be the first thing you try.\nIf you go back to the R for Windows page (Figure 1.3). This time, click RTools and it will take you to the RTools download page (Figure 1.12). Click the top RTools option for the latest release. If you had to install an older version of R in Step 1, select a version of RTools consistent with the version of R you installed.\n\n\n\n\n\n\n\nFigure 1.12: RTools page on the R CRAN site.\n\n\n\n\nOn the Rtools for Windows page (Figure 1.3), half way down you will see an Rtools installer link. Click this link and it will start downloading to your downloads folder. Double click on the file when it has finished downloading to start the installation process.\n\n\n\n\n\n\n\nFigure 1.13: RTools44 page on the R CRAN site.\n\n\n\n\nThe first window will ask which folder on your computer you want RTools saving to (Figure 1.14). Like the R installation, the default should be your C: drive, and it is important you save it your computer’s system files rather than in a cloud folder like OneDrive or DropBox. Click Next.\n\n\n\n\n\n\n\nFigure 1.14: Rtools installation process: Select destination location.\n\n\n\n\nThe select additional tasks window (Figure 1.14) asks if you want anything extra in the installation process, but keep these ticked/unticked as the defaults. Click Next.\n\n\n\n\n\n\n\nFigure 1.15: Rtools installation process: Select additional tasks.\n\n\n\n\nThe ready to install window (Figure 1.14) is the final step before the installation starts. Click Install.\n\n\n\n\n\n\n\nFigure 1.16: Rtools installation process: Ready to install.\n\n\n\n\nDepending on your computer, it will take a few seconds to a few minutes to successfully install RTools (Figure 1.17). Click Finish to complete this part of the process.\n\n\n\n\n\n\n\nFigure 1.17: Complete Rtools installation process.\n\n\n\n\nYou never need to do anything with RTools, it just exists in the background to help install certain R packages.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installing R/RStudio for Windows</span>"
+    ]
+  },
+  {
+    "objectID": "installing-r-windows.html#step-3---install-rstudio",
+    "href": "installing-r-windows.html#step-3---install-rstudio",
+    "title": "1  Installing R/RStudio for Windows",
+    "section": "\n1.4 Step 3 - Install RStudio",
+    "text": "1.4 Step 3 - Install RStudio\nIf you closed the page down, go back to the RStudio desktop download page here which you can see in Figure 1.1.\nThis page should recognise what your operating system (OS) is and the blue button will be customised to your OS. So, for a Windows user, it should prompt you to download RStudio for Windows. Clicking this link will start downloading the file to your downloads folder. Once it has finished downloading, double click on the file to start the installation process.\nThe first page of the setup process (Figure 1.14) explains what it will do and requests you close down other programmes first. Click Next &gt;.\n\n\n\n\n\n\n\nFigure 1.18: RStudio installation process: Welcome.\n\n\n\n\nThe install location page (Figure 1.15) confirms where on your computer it installs to. Like the other steps, this should be on your C: drive and be the default option. Just make sure it is not saving to a cloud drive like OneDrive or DropBox. Click Next &gt;.\n\n\n\n\n\n\n\nFigure 1.19: RStudio installation process: Choose install location.\n\n\n\n\nThe start menu page (Figure 1.16) allows you to select where RStudio will appear on your start menu. The default will just be a folder called RStudio, so keep the default option. Click Next &gt;.\n\n\n\n\n\n\n\nFigure 1.20: RStudio installation process: Choose start menu folder.\n\n\n\n\nDepending on your computer, it will take a few seconds to a few minutes to successfully install RStudio (Figure 1.21). Click Finish to complete this part of the process.\n\n\n\n\n\n\n\nFigure 1.21: Complete RStudio installation process.\n\n\n\n\nIf you have successfully installed R and RStudio, you should see a fresh RStudio window (Figure 1.22) when you open it from the RStudio folder in your start menu. So you can always find it, when you open RStudio for the first time by clicking on it’s blue and white R logo, right click and Pin to taskbar. This way, it will always be available via your taskbar at the bottom of the screen.\n\n\n\n\n\n\n\nFigure 1.22: Default white theme RStudio window.\n\n\n\n\nYou are now ready to start working with R/RStudio from your course materials!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installing R/RStudio for Windows</span>"
+    ]
+  }
+]

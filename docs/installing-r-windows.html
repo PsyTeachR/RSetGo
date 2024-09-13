@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="description" content="This guide provides instructions for installing R/RStudio for students at the University of Glasgow.">
+<title>Installing R/RStudio Guide - 1&nbsp; Installing R/RStudio for Windows</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./installing-r-mac.html" rel="next">
+<link href="./index.html" rel="prev">
+<link href="./images/logos/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="stylesheet" href="include/booktem.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/glossary.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installing-r-windows.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R/RStudio for Windows</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Installing R/RStudio Guide</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installing-r-windows.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R/RStudio for Windows</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installing-r-mac.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R/RStudio for Mac</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installing-r-library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using R/RStudio on a University Computer</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./updating-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Updating R, RStudio, and packages</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install-tidytex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing TinyTeX to knit PDF files</span></span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#rstudio-desktop-download-page" id="toc-rstudio-desktop-download-page" class="nav-link active" data-scroll-target="#rstudio-desktop-download-page"><span class="header-section-number">1.1</span> RStudio desktop download page</a></li>
+  <li><a href="#step-1---install-base-r" id="toc-step-1---install-base-r" class="nav-link" data-scroll-target="#step-1---install-base-r"><span class="header-section-number">1.2</span> Step 1 - Install base R</a></li>
+  <li><a href="#step-2---installing-rtools" id="toc-step-2---installing-rtools" class="nav-link" data-scroll-target="#step-2---installing-rtools"><span class="header-section-number">1.3</span> Step 2 - Installing RTools</a></li>
+  <li><a href="#step-3---install-rstudio" id="toc-step-3---install-rstudio" class="nav-link" data-scroll-target="#step-3---install-rstudio"><span class="header-section-number">1.4</span> Step 3 - Install RStudio</a></li>
+  <li><a href="#getting-help-for-installation-problems" id="toc-getting-help-for-installation-problems" class="nav-link" data-scroll-target="#getting-help-for-installation-problems"><span class="header-section-number">1.5</span> Getting help for installation problems</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title"><span id="sec-installing-r-windows" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R/RStudio for Windows</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>Installing R and RStudio is usually straightforward if you follow these steps. The sections below explain how to install R and R Studio on a Windows computer. If you prefer to watch a video showing the steps, <a href="https://youtu.be/H9EBlFDGG4k?si=NayiZj236I6KdTmY" target="_blank">there is a helpful YouTube video here</a> which covers installing on Windows.</p>
+<section id="rstudio-desktop-download-page" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="rstudio-desktop-download-page">
+<span class="header-section-number">1.1</span> RStudio desktop download page</h2>
+<p>Go to the <a href="https://posit.co/download/rstudio-desktop/" target="_blank">RStudio desktop download page here</a> which you can see in <a href="#fig-img-posit-install-windows" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. This is hosted by Posit - the company who create and maintain RStudio as an Integrated Development Environment (IDE).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-posit-install-windows" class="quarto-figure quarto-figure-center quarto-float anchored" alt="White background posit.co website for helping people install RStudio. On the left is a blue download and install R button. On the right is a blue download RStudio desktop for Windows button." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-posit-install-windows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/posit_install_page_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="images/posit_install_page_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="White background posit.co website for helping people install RStudio. On the left is a blue download and install R button. On the right is a blue download RStudio desktop for Windows button."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-posit-install-windows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Install R and Install RStudio page on posit.co.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>They point you to two places to 1) install R and 2) install RStudio.</p>
+</section><section id="step-1---install-base-r" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="step-1---install-base-r">
+<span class="header-section-number">1.2</span> Step 1 - Install base R</h2>
+<p>The first step is installing base R. This is the software which contains all the functions and code you will use, but it is not very user friendly on it’s own. We must first install R before we install RStudio.</p>
+<p>If you click <if>Download and Install R</if>, it will take you to the download page for R (<a href="installing-r-mac.html#fig-img-R-CRAN-1" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-R-CRAN-1" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The CRAN site has a white background with a blue R logo in the top left corner. In the middle of the screen is a list of download options for different operating systems." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-R-CRAN-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/R_CRAN_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="images/R_CRAN_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The CRAN site has a white background with a blue R logo in the top left corner. In the middle of the screen is a list of download options for different operating systems."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-R-CRAN-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Home page for the R CRAN site.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>You should click <if>Download R for Windows</if> and it will take you the R for Windows page (<a href="#fig-img-R-CRAN-windows-2" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>). Click <if>Base</if> for installing R the first time.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-R-CRAN-windows-2" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The CRAN site has a white background with a blue R logo in the top left corner. In the middle of the screen is a list of download options for Windows including base and Rtools." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-R-CRAN-windows-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/R_CRAN_2_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="images/R_CRAN_2_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The CRAN site has a white background with a blue R logo in the top left corner. In the middle of the screen is a list of download options for Windows including base and Rtools."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-R-CRAN-windows-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: R for Windows on the CRAN site.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>This will take you to the Windows download page (<a href="#fig-img-R-CRAN-windows-3" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>). Click <if>Download R for Windows</if> at the top of the page. This will be the latest version available to you and it will start downloading to your downloads folder. Double click on the file when it has finished downloading.</p>
+<p>If you have an older computer which does not support the latest version of R, you can select a different version supporting older operating systems from the <if>Previous releases</if> link, but please check with your course lead if you can only download an older version of R to check it is still suitable.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-R-CRAN-windows-3" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The CRAN site has a white background with a blue R logo in the top left corner. At the top of the page is a blue download R-4.4.1 for windows link to start the download process." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-R-CRAN-windows-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/R_CRAN_3_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="images/R_CRAN_3_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The CRAN site has a white background with a blue R logo in the top left corner. At the top of the page is a blue download R-4.4.1 for windows link to start the download process."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-R-CRAN-windows-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: R download page on CRAN.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>Once you have double clicked the installation file, the first window (<a href="#fig-img-install-r-windows-1" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>) will get you to confirm the setup language. Click <if>OK</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-r-windows-1" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, the setup language menu is a drop-down with English as the default and a blue OK button." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-r-windows-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_R_1_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5"><img src="images/install_R_1_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, the setup language menu is a drop-down with English as the default and a blue OK button."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-r-windows-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: R installation process: Select setup language.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The information window (<a href="#fig-img-install-r-windows-2" class="quarto-xref">Figure&nbsp;<span>1.6</span></a>) will explain what it is installing the user license. Click <if>Next</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-r-windows-2" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, the information page lets you scroll through the license and explains what R installs." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-r-windows-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_R_2_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-glightbox="description: .lightbox-desc-6"><img src="images/install_R_2_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, the information page lets you scroll through the license and explains what R installs."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-r-windows-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.6: R installation process: Information.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The destination location window (<a href="#fig-img-install-r-windows-3" class="quarto-xref">Figure&nbsp;<span>1.7</span></a>) will ask you to confirm where it should install R to. It is <strong>important</strong> this installs to your <code>C:</code> drive which should be the default. Click <if>Next</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-r-windows-3" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, the select destination page lets you browse through your computer files to choose a folder to save R in. The default should be a C: drive." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-r-windows-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_R_3_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" data-glightbox="description: .lightbox-desc-7"><img src="images/install_R_3_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, the select destination page lets you browse through your computer files to choose a folder to save R in. The default should be a C: drive."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-r-windows-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.7: R installation process: Select destination location.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Installation Location
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It can often cause problems to install R on a network or cloud drive, such as OneDrive or DropBox. It’s better to install these programs on your computer’s drive (<code>C:</code>). Depending on your computer’s settings, you may have to get IT support to give you access to installing programs.</p>
+<p>It can also cause rare, but hard-to-debug problems if any of the folders in the <a class="glossary">path<span class="def"></span></a> where you install R have non-Latin characters, including Chinese characters or Latin characters with accents (e.g., <code>C:\\Daniël\Programs\</code>). Try and avoid these wherever possible.</p>
+</div>
+</div>
+<p>The select components window (<a href="#fig-img-install-r-windows-4" class="quarto-xref">Figure&nbsp;<span>1.8</span></a>) lets you select which components it should install, but leave these all ticked. Click <if>Next</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-r-windows-4" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, select components page allows you to select what is installed. There should be three default boxes ticked for main files, 64-bit files, and message translations." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-r-windows-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_R_4_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" data-glightbox="description: .lightbox-desc-8"><img src="images/install_R_4_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, select components page allows you to select what is installed. There should be three default boxes ticked for main files, 64-bit files, and message translations."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-r-windows-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.8: R installation process: Select components.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The startup options window (<a href="#fig-img-install-r-windows-5" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>) asks if you want to customise the startup options, but leave this as No for the default options. Click <if>Next</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-r-windows-5" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, startup options allows you to customise the options, but the default should be no." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-r-windows-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_R_5_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" data-glightbox="description: .lightbox-desc-9"><img src="images/install_R_5_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, startup options allows you to customise the options, but the default should be no."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-r-windows-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.9: R installation process: Startup options.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The select additional tasks window (<a href="#fig-img-install-r-windows-6" class="quarto-xref">Figure&nbsp;<span>1.10</span></a>) asks if you want to add any additional steps in the installation process, but leave these ticked/unticked as default. Click <if>Next</if> to start the installation process.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-r-windows-6" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, you can select shortcuts to create for R which should be unticked, and two registry entries which should be ticked." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-r-windows-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_R_6_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" data-glightbox="description: .lightbox-desc-10"><img src="images/install_R_6_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, you can select shortcuts to create for R which should be unticked, and two registry entries which should be ticked."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-r-windows-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.10: R installation process: Select additional tasks.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>Depending on your computer, it will take a few seconds to a few minutes to successfull install R (<a href="#fig-img-install-r-windows-7" class="quarto-xref">Figure&nbsp;<span>1.11</span></a>). Click <if>Finish</if> to complete this part of the process.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-r-windows-7" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The complete installation process is a white box confirming you have completed the setup process." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-r-windows-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_R_7_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" data-glightbox="description: .lightbox-desc-11"><img src="images/install_R_7_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The complete installation process is a white box confirming you have completed the setup process."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-r-windows-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.11: Complete R installation process.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>If you followed all of these steps, then you should have R successfully installed on your computer. You do not need to open it as we never actually use R on it’s own, but you need it installed before we download and install RStudio.</p>
+</section><section id="step-2---installing-rtools" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="step-2---installing-rtools">
+<span class="header-section-number">1.3</span> Step 2 - Installing RTools</h2>
+<p>This is technically an optional step, but after you install R it is a good idea to install <a href="https://cran.rstudio.com/bin/windows/Rtools/" target="_blank">RTools</a>. You can get started without installing RTools, but if you are having problems with installing and loading some packages, this should be the first thing you try.</p>
+<p>If you go back to the R for Windows page (<a href="#fig-img-R-CRAN-windows-2" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>). This time, click <if>RTools</if> and it will take you to the RTools download page (<a href="#fig-img-RTools-CRAN-1" class="quarto-xref">Figure&nbsp;<span>1.12</span></a>). Click the top <if>RTools</if> option for the latest release. If you had to install an older version of R in Step 1, select a version of RTools consistent with the version of R you installed.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-RTools-CRAN-1" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The CRAN site has a white background with a blue R logo in the top left corner. On this page, there is a list of RTools versions to download, you should select the top most recent version." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-RTools-CRAN-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/RTools_CRAN.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-12" data-glightbox="description: .lightbox-desc-12"><img src="images/RTools_CRAN.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The CRAN site has a white background with a blue R logo in the top left corner. On this page, there is a list of RTools versions to download, you should select the top most recent version."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-RTools-CRAN-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.12: RTools page on the R CRAN site.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>On the Rtools for Windows page (<a href="#fig-img-R-CRAN-windows-2" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>), half way down you will see an Rtools installer link. Click this link and it will start downloading to your downloads folder. Double click on the file when it has finished downloading to start the installation process.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-RTools-CRAN-2" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The CRAN site has a white background with a blue R logo in the top left corner. Half way down the page, there is a link to download the RTools44 file which is called Rtools44 installer." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-RTools-CRAN-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/RTools_CRAN_2.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-13" data-glightbox="description: .lightbox-desc-13"><img src="images/RTools_CRAN_2.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The CRAN site has a white background with a blue R logo in the top left corner. Half way down the page, there is a link to download the RTools44 file which is called Rtools44 installer."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-RTools-CRAN-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.13: RTools44 page on the R CRAN site.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The first window will ask which folder on your computer you want RTools saving to (<a href="#fig-img-install-RTools-1" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>). Like the R installation, the default should be your <code>C:</code> drive, and it is important you save it your computer’s system files rather than in a cloud folder like OneDrive or DropBox. Click <if>Next</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-RTools-1" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, the select destination page lets you browse through your computer files to choose a folder to save R in. The default should be a C: drive." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-RTools-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_RTools_1.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-14" data-glightbox="description: .lightbox-desc-14"><img src="images/install_RTools_1.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, the select destination page lets you browse through your computer files to choose a folder to save R in. The default should be a C: drive."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-RTools-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.14: Rtools installation process: Select destination location.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The select additional tasks window (<a href="#fig-img-install-RTools-1" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>) asks if you want anything extra in the installation process, but keep these ticked/unticked as the defaults. Click <if>Next</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-RTools-2" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, the select additional tasks page lets you select two options. Save version information should be ticked and create start menu icon should be unticked bt default." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-RTools-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_RTools_2.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-15" data-glightbox="description: .lightbox-desc-15"><img src="images/install_RTools_2.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, the select additional tasks page lets you select two options. Save version information should be ticked and create start menu icon should be unticked bt default."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-RTools-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.15: Rtools installation process: Select additional tasks.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The ready to install window (<a href="#fig-img-install-RTools-1" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>) is the final step before the installation starts. Click <if>Install</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-RTools-3" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, the ready to install page confirms the destination location and additional tasks before you click install." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-RTools-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_RTools_3.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-16" data-glightbox="description: .lightbox-desc-16"><img src="images/install_RTools_3.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, the ready to install page confirms the destination location and additional tasks before you click install."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-RTools-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.16: Rtools installation process: Ready to install.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>Depending on your computer, it will take a few seconds to a few minutes to successfully install RTools (<a href="#fig-img-install-RTools-4" class="quarto-xref">Figure&nbsp;<span>1.17</span></a>). Click <if>Finish</if> to complete this part of the process.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-RTools-4" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The complete installation process is a white box confirming you have completed the setup process." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-RTools-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_RTools_4.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-17" data-glightbox="description: .lightbox-desc-17"><img src="images/install_RTools_4.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The complete installation process is a white box confirming you have completed the setup process."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-RTools-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.17: Complete Rtools installation process.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>You never need to do anything with RTools, it just exists in the background to help install certain R packages.</p>
+</section><section id="step-3---install-rstudio" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="step-3---install-rstudio">
+<span class="header-section-number">1.4</span> Step 3 - Install RStudio</h2>
+<p>If you closed the page down, go back to the <a href="https://posit.co/download/rstudio-desktop/" target="_blank">RStudio desktop download page here</a> which you can see in <a href="#fig-img-posit-install-windows" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>.</p>
+<p>This page should recognise what your operating system (OS) is and the blue button will be customised to your OS. So, for a Windows user, it should prompt you to download RStudio for Windows. Clicking this link will start downloading the file to your downloads folder. Once it has finished downloading, double click on the file to start the installation process.</p>
+<p>The first page of the setup process (<a href="#fig-img-install-RTools-1" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>) explains what it will do and requests you close down other programmes first. Click <if>Next &gt;</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-RStudio-1" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The first installation page explains what RStudio is installing and requests you close down other programmes. The box is white with a blue computer logo on the left." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-RStudio-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_RStudio_1_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" data-glightbox="description: .lightbox-desc-18"><img src="images/install_RStudio_1_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The first installation page explains what RStudio is installing and requests you close down other programmes. The box is white with a blue computer logo on the left."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-RStudio-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.18: RStudio installation process: Welcome.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The install location page (<a href="#fig-img-install-RTools-2" class="quarto-xref">Figure&nbsp;<span>1.15</span></a>) confirms where on your computer it installs to. Like the other steps, this should be on your <code>C:</code> drive and be the default option. Just make sure it is not saving to a cloud drive like OneDrive or DropBox. Click <if>Next &gt;</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-RStudio-2" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The installation screen is a white and grey box. Here, the select destination page lets you browse through your computer files to choose a folder to save RStudio in. The default should be a C: drive." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-RStudio-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_RStudio_2_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" data-glightbox="description: .lightbox-desc-19"><img src="images/install_RStudio_2_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The installation screen is a white and grey box. Here, the select destination page lets you browse through your computer files to choose a folder to save RStudio in. The default should be a C: drive."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-RStudio-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.19: RStudio installation process: Choose install location.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>The start menu page (<a href="#fig-img-install-RTools-3" class="quarto-xref">Figure&nbsp;<span>1.16</span></a>) allows you to select where RStudio will appear on your start menu. The default will just be a folder called RStudio, so keep the default option. Click <if>Next &gt;</if>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-RStudio-3" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The box is white and grey. Here, you can choose a start menu folder to create as a shortcut. The default should be creating a folder called RStudio." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-RStudio-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_RStudio_3_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" data-glightbox="description: .lightbox-desc-20"><img src="images/install_RStudio_3_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The box is white and grey. Here, you can choose a start menu folder to create as a shortcut. The default should be creating a folder called RStudio."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-RStudio-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.20: RStudio installation process: Choose start menu folder.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>Depending on your computer, it will take a few seconds to a few minutes to successfully install RStudio (<a href="#fig-img-install-RStudio-4" class="quarto-xref">Figure&nbsp;<span>1.21</span></a>). Click <if>Finish</if> to complete this part of the process.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-install-RStudio-4" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The complete installation process is a white box with a blue computer logo on the left confirming you have completed the setup process." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-install-RStudio-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_RStudio_4_windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" data-glightbox="description: .lightbox-desc-21"><img src="images/install_RStudio_4_windows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The complete installation process is a white box with a blue computer logo on the left confirming you have completed the setup process."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-install-RStudio-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.21: Complete RStudio installation process.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>If you have successfully installed R and RStudio, you should see a fresh RStudio window (<a href="#fig-img-RStudio-fresh-windows" class="quarto-xref">Figure&nbsp;<span>1.22</span></a>) when you open it from the RStudio folder in your start menu. So you can always find it, when you open RStudio for the first time by clicking on it’s blue and white R logo, right click and <if>Pin to taskbar</if>. This way, it will always be available via your taskbar at the bottom of the screen.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-img-RStudio-fresh-windows" class="quarto-figure quarto-figure-center quarto-float anchored" alt="If the installation is successful, you can open RStudio as a piece of software on your computer. With default settings, it will open as a white background with three main windows: Console, Environment, and Files. " data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-img-RStudio-fresh-windows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/Fresh_RStudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" data-glightbox="description: .lightbox-desc-22"><img src="images/Fresh_RStudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="If the installation is successful, you can open RStudio as a piece of software on your computer. With default settings, it will open as a white background with three main windows: Console, Environment, and Files. "></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-RStudio-fresh-windows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.22: Default white theme RStudio window.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>You are now ready to start working with R/RStudio from your course materials!</p>
+</section><section id="getting-help-for-installation-problems" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="getting-help-for-installation-problems">
+<span class="header-section-number">1.5</span> Getting help for installation problems</h2>
+<p>If you have any problems with installing R and R Studio on your computer, please attend the graduate teaching assistant support sessions for your course, speak to your course lead, or post on the Teams channel for your course/programme.</p>
+
+
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1.1: Install R and Install RStudio page on posit.co.</span>
+<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;1.2: Home page for the R CRAN site.</span>
+<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;1.3: R for Windows on the CRAN site.</span>
+<span class="glightbox-desc lightbox-desc-4">Figure&nbsp;1.4: R download page on CRAN.</span>
+<span class="glightbox-desc lightbox-desc-5">Figure&nbsp;1.5: R installation process: Select setup language.</span>
+<span class="glightbox-desc lightbox-desc-6">Figure&nbsp;1.6: R installation process: Information.</span>
+<span class="glightbox-desc lightbox-desc-7">Figure&nbsp;1.7: R installation process: Select destination location.</span>
+<span class="glightbox-desc lightbox-desc-8">Figure&nbsp;1.8: R installation process: Select components.</span>
+<span class="glightbox-desc lightbox-desc-9">Figure&nbsp;1.9: R installation process: Startup options.</span>
+<span class="glightbox-desc lightbox-desc-10">Figure&nbsp;1.10: R installation process: Select additional tasks.</span>
+<span class="glightbox-desc lightbox-desc-11">Figure&nbsp;1.11: Complete R installation process.</span>
+<span class="glightbox-desc lightbox-desc-12">Figure&nbsp;1.12: RTools page on the R CRAN site.</span>
+<span class="glightbox-desc lightbox-desc-13">Figure&nbsp;1.13: RTools44 page on the R CRAN site.</span>
+<span class="glightbox-desc lightbox-desc-14">Figure&nbsp;1.14: Rtools installation process: Select destination location.</span>
+<span class="glightbox-desc lightbox-desc-15">Figure&nbsp;1.15: Rtools installation process: Select additional tasks.</span>
+<span class="glightbox-desc lightbox-desc-16">Figure&nbsp;1.16: Rtools installation process: Ready to install.</span>
+<span class="glightbox-desc lightbox-desc-17">Figure&nbsp;1.17: Complete Rtools installation process.</span>
+<span class="glightbox-desc lightbox-desc-18">Figure&nbsp;1.18: RStudio installation process: Welcome.</span>
+<span class="glightbox-desc lightbox-desc-19">Figure&nbsp;1.19: RStudio installation process: Choose install location.</span>
+<span class="glightbox-desc lightbox-desc-20">Figure&nbsp;1.20: RStudio installation process: Choose start menu folder.</span>
+<span class="glightbox-desc lightbox-desc-21">Figure&nbsp;1.21: Complete RStudio installation process.</span>
+<span class="glightbox-desc lightbox-desc-22">Figure&nbsp;1.22: Default white theme RStudio window.</span>
+</div>
+</section></main><!-- /main --><script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+// open rdrr links externally ----
+
+var exlinks = document.querySelectorAll("a[href^='https://rdrr.io']");
+var exlink_func = function(){
+  window.open(this.href);
+  return false;
+};
+for (var i = 0; i < exlinks.length; i++) {
+    exlinks[i].addEventListener('click', exlink_func, false);
+}
+
+// visible second sidebar in mobile ----
+
+function move_sidebar() {
+  var toc = document.getElementById("TOC");
+  var small_sidebar = document.querySelector("#quarto-sidebar .sidebar-menu-container");
+  var right_sidebar = document.getElementById("quarto-margin-sidebar");
+
+  if (window.innerWidth < 768) {
+    small_sidebar.append(toc);
+  } else {
+    right_sidebar.append(toc);
+  }
+}
+move_sidebar();
+window.onresize = move_sidebar;
+</script><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./installing-r-mac.html" class="pagination-link" aria-label="Installing R/RStudio for Mac">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R/RStudio for Mac</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>CC-BY (2024) James Bartlett</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
+
+</body></html>
