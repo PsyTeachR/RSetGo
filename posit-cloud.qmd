@@ -1,0 +1,13 @@
+# Using Posit Cloud {#sec-posit-server}
+
+Whenever possible, we recommend installing R/RStudio on your own computer or using the library/lab computers. This will provide you with a consistent experience over your course and degree. However, we appreciate there will be times where you might not have a computer which supports R and you cannot make it to the library. 
+
+In this scenario, you can try and use [Posit Cloud](https://posit.co/products/enterprise/cloud){target="_blank"}. This is a version of R/RStudio which works in your web browser without downloading software that Posit - the company behind RStudio - maintain.
+
+::: {.callout-warning}
+## Think carefully about your sign-up details
+
+If you sign up for a free account, keep two things in mind. If you use your University email, keep security in mind and choose a different password to your university account. After you graduate, you will also lose access to your University email, so consider if you will lose any files. 
+:::
+
+You can sign up for a free account but it comes with usage restrictions, typically 25 hours per month and 1GB of computing power. There are cheap student plans available but we hope you can avoid paying anything by downloading R/RStudio to your computer or using one of the lab/library computers. 

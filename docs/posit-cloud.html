@@ -8,7 +8,7 @@
 
 <meta name="description" content="This guide provides instructions for installing R/RStudio for students at the University of Glasgow.">
 
-<title>6&nbsp; Installing TinyTeX to knit PDF files – Installing R/RStudio Guide</title>
+<title>4&nbsp; Using Posit Cloud – Installing R/RStudio Guide</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,41 +27,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -71,7 +36,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./updating-r.html" rel="prev">
+<link href="./updating-r.html" rel="next">
+<link href="./installing-r-library.html" rel="prev">
 <link href="./images/logos/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -303,7 +269,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install-tidytex.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing TinyTeX to knit PDF files</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./posit-cloud.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Posit Cloud</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -357,7 +323,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posit-cloud.html" class="sidebar-item-text sidebar-link">
+  <a href="./posit-cloud.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Posit Cloud</span></span></a>
   </div>
 </li>
@@ -369,7 +335,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./install-tidytex.html" class="sidebar-item-text sidebar-link active">
+  <a href="./install-tidytex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing TinyTeX to knit PDF files</span></span></a>
   </div>
 </li>
@@ -378,14 +344,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#knitting-to-pdf" id="toc-knitting-to-pdf" class="nav-link active" data-scroll-target="#knitting-to-pdf"><span class="header-section-number">6.1</span> Knitting to PDF</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -393,7 +353,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-install-tinytex" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing TinyTeX to knit PDF files</span></span></h1>
+<h1 class="title"><span id="sec-posit-server" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Posit Cloud</span></span></h1>
 </div>
 
 
@@ -410,31 +370,24 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </header>
 
 
-<section id="knitting-to-pdf" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="knitting-to-pdf"><span class="header-section-number">6.1</span> Knitting to PDF</h2>
-<p>For most of our courses, we encourage you to knit R Markdown files to html or Word files. However, there is also an option to knit to PDF files. By default, it will not work on your computer unless you have software on your computer to compile a PDF file.</p>
-<p>To generate PDF reports, the easiest way is installing <a href="https://yihui.org/tinytex/" target="_blank"><pkg>tinytex</pkg></a> and running the following code to install a lightweight LaTeX compiler:</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-label="1"></a><span class="co"># run this in the console</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-label="2"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-label="3"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>Whenever possible, we recommend installing R/RStudio on your own computer or using the library/lab computers. This will provide you with a consistent experience over your course and degree. However, we appreciate there will be times where you might not have a computer which supports R and you cannot make it to the library.</p>
+<p>In this scenario, you can try and use <a href="https://posit.co/products/enterprise/cloud" target="_blank">Posit Cloud</a>. This is a version of R/RStudio which works in your web browser without downloading software that Posit - the company behind RStudio - maintain.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+<span class="screen-reader-only">Warning</span>Think carefully about your sign-up details
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>On university computers, this is already installed and you should be able to knit to PDF. Please remember <strong>not</strong> to install packages on the university computers or online server as it can cause clashes between your user and system libraries.</p>
+<p>If you sign up for a free account, keep two things in mind. If you use your University email, keep security in mind and choose a different password to your university account. After you graduate, you will also lose access to your University email, so consider if you will lose any files.</p>
 </div>
 </div>
+<p>You can sign up for a free account but it comes with usage restrictions, typically 25 hours per month and 1GB of computing power. There are cheap student plans available but we hope you can avoid paying anything by downloading R/RStudio to your computer or using one of the lab/library computers.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script>
@@ -1319,11 +1272,14 @@ window.onresize = move_sidebar;
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./updating-r.html" class="pagination-link" aria-label="Updating R, RStudio, and packages">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Updating R, RStudio, and packages</span></span>
+      <a href="./installing-r-library.html" class="pagination-link" aria-label="Using R/RStudio on a University Computer">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Using R/RStudio on a University Computer</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./updating-r.html" class="pagination-link" aria-label="Updating R, RStudio, and packages">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Updating R, RStudio, and packages</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

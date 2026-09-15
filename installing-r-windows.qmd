@@ -2,26 +2,11 @@
 
 Installing R and RStudio is usually straightforward if you follow these steps. The sections below explain how to install R and R Studio on a Windows computer. If you prefer to watch a video showing the steps, [there is a helpful YouTube video here](https://youtu.be/H9EBlFDGG4k?si=NayiZj236I6KdTmY){target="_blank"} which covers installing on Windows. 
 
-## RStudio desktop download page
-
-Go to the [RStudio desktop download page here](https://posit.co/download/rstudio-desktop/){target="_blank"} which you can see in @fig-img-posit-install-windows. This is hosted by Posit - the company who create and maintain RStudio as an Integrated Development Environment (IDE).
-
-```{r img-posit-install, echo=FALSE}
-#| label: fig-img-posit-install-windows
-#| fig.cap: "Install R and Install RStudio page on posit.co."
-#| fig.alt: "White background posit.co website for helping people install RStudio. On the left is a blue download and install R button. On the right is a blue download RStudio desktop for Windows button."
-
-knitr::include_graphics("images/posit_install_page_windows.png")
-
-```
-
-They point you to two places to 1) install R and 2) install RStudio. 
-
 ## Step 1 - Install base R
 
 The first step is installing base R. This is the software which contains all the functions and code you will use, but it is not very user friendly on it's own. We must first install R before we install RStudio. 
 
-If you click <if>Download and Install R</if>, it will take you to the download page for R (@fig-img-R-CRAN-1).
+Navigate to the [https://www.stats.bris.ac.uk/R/](https://www.stats.bris.ac.uk/R/){target="_blank"} site, it will take you to the download page for R (@fig-img-R-CRAN-1).
 
 ```{r img-R-CRAN-1, echo=FALSE}
 #| label: fig-img-R-CRAN-1
@@ -218,9 +203,9 @@ You never need to do anything with RTools, it just exists in the background to h
 
 ## Step 3 - Install RStudio
 
-If you closed the page down, go back to the [RStudio desktop download page here](https://posit.co/download/rstudio-desktop/){target="_blank"} which you can see in @fig-img-posit-install-windows.
+Now you have R installed, you can now download RStudio as the IDE you will interact with. Under [RStudio IDE](https://docs.posit.co/ide/user/?_gl=1*cb6q7c*_gcl_au*MTkwNzk3MjYwNC4xNzg5NDc4ODEx*_ga*MTQwNTM4Mzg4NC4xNzg2NDM5Nzcw*_ga_G020NYQMP9*czE3ODk0Nzg4MDckbzEkZzEkdDE3ODk0ODIzMjUkajE2JGwwJGgw#rstudio-ide-oss-downloads){target="_blank"}, select the Download option for your version of Windows. Make sure you select the RStudio IDE option under Direct Downloads (Open Source) and **not** Direct Downloads (Commerical). 
 
-This page should recognise what your operating system (OS) is and the blue button will be customised to your OS. So, for a Windows user, it should prompt you to download RStudio for Windows. Clicking this link will start downloading the file to your downloads folder. Once it has finished downloading, double click on the file to start the installation process.
+Clicking this link will start downloading the file to your downloads folder. Once it has finished downloading, double click on the file to start the installation process.
 
 The first page of the setup process (@fig-img-install-RTools-1) explains what it will do and requests you close down other programmes first. Click <if>Next ></if>. 
 

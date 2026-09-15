@@ -46,6 +46,7 @@ book:
   - installing-r-windows.qmd
   - installing-r-mac.qmd
   - installing-r-library.qmd
+  - posit-cloud.qmd
   - updating-r.qmd
   - install-tidytex.qmd
 bibliography: include/references.bib
